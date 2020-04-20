@@ -1,0 +1,106 @@
+﻿@font-face {
+	font-family: "Roboto";  
+	src: url("../fonts/roboto.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal;
+}
+	 
+@font-face {
+	font-family: "Montserrat";
+	src: url("../fonts/Montserrat.ttf") format("truetype");
+	font-style: normal; 
+	font-weight: normal;
+}
+
+* {
+	font-family: 'Roboto' ;
+}
+
+body, ul {
+    margin: 0;
+    padding: 0;
+	font-size: 18px;
+	z-index: 2;
+}
+
+.clearfix::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.wrapper {
+	padding: 0 auto;
+	margin: 0 auto;
+	display: flex;
+}
+
+nav {
+	background: #f1f2f4;
+}
+
+.menu {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-content: space-around;
+	z-index: 1;
+	background-color: #f2f2f2;
+	width: 100%;
+	overflow: hidden;
+}
+
+.menu li {
+	display: inline; /* пункты меню в ряд */
+	list-style: none;
+	padding: 0% 3%;
+}
+
+.menu li a {
+	font: 1em Roboto;
+	display: inline-block;
+	padding: 10px 15px;
+	text-decoration: none;
+	color: #373a39;
+}
+
+.menu li a:hover {
+	color: #044cf1;
+}
+
+.menuBurger {
+	padding: 10px 15px;
+	display: none;      /* кнопка гамбургер скрыта */
+	cursor: pointer;
+	width: 100%;
+}
+
+section {
+	margin-top: 40px;
+}
+
+#menuCSS {
+		display: none;
+	}
+
+@media screen and (max-width: 570px) {
+    .menu {
+        display: none; /* пункты меню скрыты */
+		background: #f1f2f4;
+		position: absolute;
+	}
+	
+	.menu li {
+	    float: none; /* пункты меню в столбцах */
+    }
+	
+	.menuBurger {
+		display: inline-block; /* иконка гамбургер видна */
+		width: 100vh;
+    }
+	
+	#menuCSS:checked + .menu {
+		display: flex;
+		flex-direction: column;
+	}
+}
